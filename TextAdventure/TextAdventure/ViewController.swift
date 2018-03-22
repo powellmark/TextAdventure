@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet var consoleView: TAConsoleView!
     @IBOutlet var inputField: UITextField!
     
+    var roomManager: RoomManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +29,10 @@ class ViewController: UIViewController {
         inputField.layer.borderColor = inputField.textColor?.cgColor
         inputField.layer.cornerRadius = 5
         inputField.tintColor = inputField.textColor
+        
+        initializeWorld()
+        
+        displayCurrentRoom()
     }
     
     deinit {
@@ -39,7 +45,14 @@ class ViewController: UIViewController {
             return
         }
         
-        consoleView.appendToConsole(input)
+        consoleView.appendToConsole(">"+input)
+        
+        if let outputList = roomManager?.process(input) {
+            for output in outputList {
+                consoleView.appendToConsole(output)
+            }
+        }
+        
         inputField.text = ""
     }
     
@@ -89,3 +102,20 @@ extension ViewController {
     }
 }
 
+extension ViewController {
+    func initializeWorld() {
+        roomManager = RoomManager()
+        roomManager?.load()
+    }
+    
+    func displayCurrentRoom() {
+        guard let room = roomManager?.currentRoom else {
+            return
+        }
+        
+        consoleView.appendToConsole(room.description)
+        for exit in room.exits {
+            consoleView.appendToConsole(exit.exitDescription)
+        }
+    }
+}

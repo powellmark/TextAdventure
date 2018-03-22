@@ -13,6 +13,9 @@
 		612E90F8206318DF0090C1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 612E90F7206318DF0090C1AB /* Assets.xcassets */; };
 		612E90FB206318DF0090C1AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612E90F9206318DF0090C1AB /* LaunchScreen.storyboard */; };
 		612E9103206400BD0090C1AB /* TAConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612E9102206400BD0090C1AB /* TAConsoleView.swift */; };
+		612E910620642A830090C1AB /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612E910520642A830090C1AB /* Room.swift */; };
+		612E910820642AF40090C1AB /* Exit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612E910720642AF40090C1AB /* Exit.swift */; };
+		612E910A206435150090C1AB /* RoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612E9109206435150090C1AB /* RoomManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		612E90FA206318DF0090C1AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		612E90FC206318DF0090C1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		612E9102206400BD0090C1AB /* TAConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConsoleView.swift; sourceTree = "<group>"; };
+		612E910520642A830090C1AB /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		612E910720642AF40090C1AB /* Exit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exit.swift; sourceTree = "<group>"; };
+		612E9109206435150090C1AB /* RoomManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		612E90EF206318DF0090C1AB /* TextAdventure */ = {
 			isa = PBXGroup;
 			children = (
+				612E910420642A560090C1AB /* ContentData */,
 				612E90F0206318DF0090C1AB /* AppDelegate.swift */,
 				612E90F2206318DF0090C1AB /* ViewController.swift */,
 				612E90F4206318DF0090C1AB /* Main.storyboard */,
@@ -63,8 +70,18 @@
 				612E90F9206318DF0090C1AB /* LaunchScreen.storyboard */,
 				612E90FC206318DF0090C1AB /* Info.plist */,
 				612E9102206400BD0090C1AB /* TAConsoleView.swift */,
+				612E9109206435150090C1AB /* RoomManager.swift */,
 			);
 			path = TextAdventure;
+			sourceTree = "<group>";
+		};
+		612E910420642A560090C1AB /* ContentData */ = {
+			isa = PBXGroup;
+			children = (
+				612E910520642A830090C1AB /* Room.swift */,
+				612E910720642AF40090C1AB /* Exit.swift */,
+			);
+			path = ContentData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +156,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				612E910820642AF40090C1AB /* Exit.swift in Sources */,
 				612E90F3206318DF0090C1AB /* ViewController.swift in Sources */,
 				612E90F1206318DF0090C1AB /* AppDelegate.swift in Sources */,
+				612E910620642A830090C1AB /* Room.swift in Sources */,
+				612E910A206435150090C1AB /* RoomManager.swift in Sources */,
 				612E9103206400BD0090C1AB /* TAConsoleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
