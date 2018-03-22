@@ -1,24 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Courier.ttc">
+            <string>Courier</string>
+            <string>Courier-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TextAdventure" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Lg-Oo-eda" customClass="TAConsoleView" customModule="TextAdventure" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="617"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="consoleTableViewCellId" id="Sfr-Oe-gk4" customClass="TAConsoleTableViewCell" customModule="TextAdventure" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sfr-Oe-gk4" id="OzM-zu-WTe">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnR-Hl-qGG">
+                                                    <rect key="frame" x="15" y="11" width="345" height="22"/>
+                                                    <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="1" blue="0.12386004964017605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="FnR-Hl-qGG" firstAttribute="leading" secondItem="OzM-zu-WTe" secondAttribute="leadingMargin" id="A1i-8W-yXS"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="FnR-Hl-qGG" secondAttribute="bottom" id="IeJ-lR-pUh"/>
+                                                <constraint firstItem="FnR-Hl-qGG" firstAttribute="top" secondItem="OzM-zu-WTe" secondAttribute="topMargin" id="PVK-nm-0nJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FnR-Hl-qGG" secondAttribute="trailing" id="fEN-ZI-MYm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="consoleLabel" destination="FnR-Hl-qGG" id="qxl-Ew-7T5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzx-JX-nu8">
+                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JSO-gf-EW3">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="0.0" green="1" blue="0.12386004964017605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="a42-Sq-xbJ"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xg7-LA-hpl">
+                                        <rect key="frame" x="313" y="0.0" width="52" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="17"/>
+                                        <state key="normal" title="Enter">
+                                            <color key="titleColor" red="0.0" green="1" blue="0.12386004964017605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="submitCommand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rFm-mE-VM9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="JSO-gf-EW3" secondAttribute="bottom" id="OaM-NE-AXV"/>
+                                    <constraint firstItem="Xg7-LA-hpl" firstAttribute="top" secondItem="Wzx-JX-nu8" secondAttribute="top" id="PdX-nR-ahz"/>
+                                    <constraint firstItem="JSO-gf-EW3" firstAttribute="top" secondItem="Wzx-JX-nu8" secondAttribute="top" id="bYH-Re-18S"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xg7-LA-hpl" secondAttribute="bottom" id="dgi-9e-Eeg"/>
+                                    <constraint firstItem="Xg7-LA-hpl" firstAttribute="leading" secondItem="JSO-gf-EW3" secondAttribute="trailing" constant="10" id="h6f-7N-JxL"/>
+                                    <constraint firstItem="JSO-gf-EW3" firstAttribute="leading" secondItem="Wzx-JX-nu8" secondAttribute="leading" id="zAf-1M-Z2L"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xg7-LA-hpl" secondAttribute="trailing" constant="10" id="zGw-d0-MrA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="4Lg-Oo-eda" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FKe-zh-2x7"/>
+                            <constraint firstItem="Wzx-JX-nu8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ja4-kn-rsm"/>
+                            <constraint firstItem="4Lg-Oo-eda" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yc2-79-4HH"/>
+                            <constraint firstItem="Wzx-JX-nu8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="edE-w6-SZw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wzx-JX-nu8" secondAttribute="bottom" id="o7n-9l-5h1"/>
+                            <constraint firstItem="Wzx-JX-nu8" firstAttribute="top" secondItem="4Lg-Oo-eda" secondAttribute="bottom" id="oMO-tW-aib"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Lg-Oo-eda" secondAttribute="trailing" id="tXL-80-PHo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="mZC-24-aBy" appends="YES" id="aMp-hQ-YlD"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="consoleView" destination="4Lg-Oo-eda" id="bLF-O3-Ccc"/>
+                        <outlet property="inputBottomConstraint" destination="o7n-9l-5h1" id="mhH-Qr-goh"/>
+                        <outlet property="inputField" destination="JSO-gf-EW3" id="hw3-lR-M1j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mZC-24-aBy">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="RIL-hg-EK7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="127.28635682158921"/>
         </scene>
     </scenes>
 </document>
