@@ -38,6 +38,8 @@ class RoomManager: NSObject {
             return helpCommand()
         } else if verb == "go" {
             return parseGo(components)
+        } else if verb == "examine" {
+            return parseExamine(components)
         } else {
             return ["\(command) is not a valid command"]
         }
@@ -50,6 +52,24 @@ class RoomManager: NSObject {
         
         Available verbs: go, take, use, examine, look, push, drop, drink, eat
         """]
+    }
+    
+    func parseExamine(_ parameters: [String]) -> [String] {
+        guard parameters.count > 0 else {
+            return ["What do you want to examine?"]
+        }
+        
+        let itemName = parameters[0]
+        
+        if let items = currentRoom?.items {
+            for item in items {
+                if item.name == itemName {
+                    return item.handleAction("examine")
+                }
+            }
+        }
+        
+        return ["You can't examine that"]
     }
     
     func parseGo(_ parameters: [String]) -> [String] {

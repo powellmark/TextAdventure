@@ -18,6 +18,8 @@
 		612E910A206435150090C1AB /* RoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612E9109206435150090C1AB /* RoomManager.swift */; };
 		612E910C20654E200090C1AB /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612E910B20654E200090C1AB /* World.swift */; };
 		612E910E2065510C0090C1AB /* world.txt in Resources */ = {isa = PBXBuildFile; fileRef = 612E910D2065510C0090C1AB /* world.txt */; };
+		612E911020655E250090C1AB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612E910F20655E250090C1AB /* Item.swift */; };
+		612E911220655E6A0090C1AB /* ItemAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612E911120655E6A0090C1AB /* ItemAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		612E9109206435150090C1AB /* RoomManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManager.swift; sourceTree = "<group>"; };
 		612E910B20654E200090C1AB /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		612E910D2065510C0090C1AB /* world.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = world.txt; sourceTree = "<group>"; };
+		612E910F20655E250090C1AB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		612E911120655E6A0090C1AB /* ItemAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				612E910520642A830090C1AB /* Room.swift */,
 				612E910720642AF40090C1AB /* Exit.swift */,
 				612E910B20654E200090C1AB /* World.swift */,
+				612E910F20655E250090C1AB /* Item.swift */,
+				612E911120655E6A0090C1AB /* ItemAction.swift */,
 			);
 			path = ContentData;
 			sourceTree = "<group>";
@@ -167,7 +173,9 @@
 				612E90F3206318DF0090C1AB /* ViewController.swift in Sources */,
 				612E90F1206318DF0090C1AB /* AppDelegate.swift in Sources */,
 				612E910620642A830090C1AB /* Room.swift in Sources */,
+				612E911020655E250090C1AB /* Item.swift in Sources */,
 				612E910A206435150090C1AB /* RoomManager.swift in Sources */,
+				612E911220655E6A0090C1AB /* ItemAction.swift in Sources */,
 				612E910C20654E200090C1AB /* World.swift in Sources */,
 				612E9103206400BD0090C1AB /* TAConsoleView.swift in Sources */,
 			);

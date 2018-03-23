@@ -12,4 +12,5 @@ struct Room: Codable {
     let id: String
     let description: String
     let exits: [Exit]
+    let items: [Item]
 }
