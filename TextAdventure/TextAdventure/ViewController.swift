@@ -105,7 +105,7 @@ extension ViewController {
 extension ViewController {
     func initializeWorld() {
         roomManager = RoomManager()
-        roomManager?.load()
+        roomManager?.load(from: "world")
     }
     
     func displayCurrentRoom() {

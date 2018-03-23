@@ -10,27 +10,23 @@ import UIKit
 
 class RoomManager: NSObject {
     var currentRoom: Room?
-    var world: [String: Room]?
+    var world: World?
     
-    func load() {
-        let exit1 = Exit(toRoomId: "002", exitDirection: "north", exitDescription: "A door to the north leads to darkness.", locked: false)
-        let exit2 = Exit(toRoomId: "003", exitDirection: "up", exitDescription: "A ladder leads to the loft above.", locked: false)
-        let room1Exits = [exit1, exit2]
-        let room1 = Room(id: "001", description: "This is a damp room. The windows are covered with tattered rags. There is a bookshelf in the corner that contains moldy rotten tomes. In the haze you can make out what appears to be a loft above.", exits: room1Exits)
+    func load(from filename: String) {
+        if let filepath = Bundle.main.path(forResource: filename, ofType: "txt") {
+            do {
+                let contents = try String(contentsOfFile: filepath)
+                let jsonData = contents.data(using: .utf8)!
+                let decoder = JSONDecoder()
+                world = try! decoder.decode(World.self, from: jsonData)
+                currentRoom = world?.startRoom()
+            } catch {
+                // contents could not be loaded
+            }
+        } else {
+            // example.txt not found!
+        }
         
-        let exit3 = Exit(toRoomId: "001", exitDirection: "south", exitDescription: "The doorway to the south leads back to where you came.", locked: false)
-        let room2Exits = [exit3]
-        let room2 = Room(id: "002", description: "You are in what appears to be a kitchen. Although, it's not certain as all furniture, save a single table, has been removed. There are disconnected pipes poking from the walls.", exits: room2Exits)
-        
-        let exit4 = Exit(toRoomId: "001", exitDirection: "down", exitDescription: "The only way out is back down the ladder.", locked: false)
-        let room3Exits = [exit4]
-        let room3 = Room(id: "003", description: "This loft appears to be a study. There is a roll top desk against the far wall and a couch next to it.", exits: room3Exits)
-        
-        world = [String: Room]()
-        world?[room1.id] = room1
-        world?[room2.id] = room2
-        world?[room3.id] = room3
-        currentRoom = room1
     }
     
     func process(_ command: String) -> [String] {
@@ -66,7 +62,7 @@ class RoomManager: NSObject {
         if let exits = currentRoom?.exits {
             for exit in exits {
                 if direction == exit.exitDirection {
-                    currentRoom = world?[exit.toRoomId]
+                    currentRoom = world?.room(for: exit.toRoomId)
                     if let currentRoom = currentRoom {
                         var newRoom = [String]()
                         newRoom.append(currentRoom.description)

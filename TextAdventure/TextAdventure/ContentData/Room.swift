@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Room {
+struct Room: Codable {
     let id: String
     let description: String
     let exits: [Exit]

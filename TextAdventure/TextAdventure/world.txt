@@ -1,0 +1,47 @@
+{
+  "startRoomId" : "001",
+  "rooms" : [
+    {
+      "id" : "001",
+      "exits" : [
+        {
+          "locked" : false,
+          "exitDirection" : "north",
+          "toRoomId" : "002",
+          "exitDescription" : "A door to the north leads to darkness."
+        },
+        {
+          "locked" : false,
+          "exitDirection" : "up",
+          "toRoomId" : "003",
+          "exitDescription" : "A ladder leads to the loft above."
+        }
+      ],
+      "description" : "This is a damp room. The windows are covered with tattered rags. There is a bookshelf in the corner that contains moldy rotten tomes. In the haze you can make out what appears to be a loft above."
+    },
+    {
+      "id" : "002",
+      "exits" : [
+        {
+          "locked" : false,
+          "exitDirection" : "south",
+          "toRoomId" : "001",
+          "exitDescription" : "The doorway to the south leads back to where you came."
+        }
+      ],
+      "description" : "You are in what appears to be a kitchen. Although, it's not certain as all furniture, save a single table, has been removed. There are disconnected pipes poking from the walls."
+    },
+    {
+      "id" : "003",
+      "exits" : [
+        {
+          "locked" : false,
+          "exitDirection" : "down",
+          "toRoomId" : "001",
+          "exitDescription" : "The only way out is back down the ladder."
+        }
+      ],
+      "description" : "This loft appears to be a study. There is a roll top desk against the far wall and a couch next to it."
+    }
+  ]
+}

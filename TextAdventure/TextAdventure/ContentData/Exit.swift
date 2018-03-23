@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Exit {
+struct Exit: Codable {
     let toRoomId: String
     let exitDirection: String
     let exitDescription: String
